@@ -33,6 +33,7 @@ $TMUX rename-window -t $SESSION:0 'Main'
 $TMUX splitw -v -p 10 -t $SESSION:0.0
 $TMUX splitw -h -p 80 -t $SESSION:0.1
 $TMUX send-keys -t $SESSION:0.0 "while true; do ~/go/bin/kaspawallet balance;sleep 3;done" Enter
+$TMUX send-keys -t $SESSION:0.0 "printf '\033]2;%s\033\\' 'Kaspd'" Enter
 $TMUX send-keys -t $SESSION:0.1 "ping 8.8.8.8" Enter
 $TMUX send-keys -t $SESSION:0.2 "while true; do ~/go/bin/kaspawallet balance;sleep 3;done" Enter
 
