@@ -119,10 +119,12 @@ $TMUX rename-window -t $SESSION:0 'Hit Ctrl+a d to disconnect'
 $TMUX splitw -v -p 10 -t $SESSION:0.0
 $TMUX splitw -h -p 80 -t $SESSION:0.1
 $TMUX send-keys -t $SESSION:0.0 "while true; do ~/go/bin/kaspawallet balance;sleep 3;done" Enter
-$TMUX select-pane -t $SESSION:0.0 -T "\033]2;%s\033\\ Kaspd"
+$TMUX select-pane -t $SESSION:0.0 -T "Kaspd Daemon"
 #$TMUX send-keys -t $SESSION:0.0 "printf '\033]2;%s\033\\' 'Kaspd'" Enter
 $TMUX send-keys -t $SESSION:0.1 "ping 8.8.8.8" Enter
+$TMUX select-pane -t $SESSION:0.0 -T "Kaspa Wallet Daemon"
 $TMUX send-keys -t $SESSION:0.2 "while true; do ~/go/bin/kaspawallet balance;sleep 3;done" Enter
+$TMUX select-pane -t $SESSION:0.0 -T "Kaspa Wallet Balance Loop"
 
 #$TMUX set-option -t "$SESSION" -g pane-border-format " [ ###P #T ] "
 
