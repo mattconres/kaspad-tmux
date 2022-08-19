@@ -14,7 +14,7 @@ SESSION="KASPA-$HOSTNAME"
 KBIN="#HOME/go/bin"
 
 echo "Attempting to start Session"
-$TMUX -q new-session -d -s "$SESSION" > /dev/null
+$TMUX -q new-session -d -s "$SESSION"
 
 if [ $? -eq 1 ]
 then
