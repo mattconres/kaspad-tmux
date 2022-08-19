@@ -115,7 +115,7 @@ $TMUX set-window-option -t "$SESSION" window-status-current-style bg=default
 
 
 
-$TMUX rename-window -t $SESSION:0 'Main'
+$TMUX rename-window -t $SESSION:0 'Hit Ctrl+a d to disconnect'
 $TMUX splitw -v -p 10 -t $SESSION:0.0
 $TMUX splitw -h -p 80 -t $SESSION:0.1
 $TMUX send-keys -t $SESSION:0.0 "while true; do ~/go/bin/kaspawallet balance;sleep 3;done" Enter
