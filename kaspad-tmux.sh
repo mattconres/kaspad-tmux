@@ -46,7 +46,7 @@ $TMUX send-keys -t $SESSION:0.1 "ping 8.8.8.8" Enter
 $TMUX -q select-layout -t "$SESSION" tiled
 
 
-#$TMUX -q kill-pane -t "${SESSION}.0"
+$TMUX -q kill-pane -t "${SESSION}:0.2"
 #$TMUX -q select-pane -t "${SESSION}.0"
 #$TMUX -q select-layout -t "$SESSION" "$LAYOUT"
 
