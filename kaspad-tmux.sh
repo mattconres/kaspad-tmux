@@ -23,6 +23,7 @@ $TMUX -q new-session -d -s "$SESSION"
 
 
 $TMUX -q split-window -t "$SESSION" "printf '\033]2;%s\033\\' 'WalletBalance' ; while true; do ~/go/bin/kaspawallet balance;sleep 3; done"
+$TMUX -q split-window -t "$SESSION" "printf '\033]2;%s\033\\' 'WalletBalance' ; while true; do ~/go/bin/kaspawallet balance;sleep 3; done"
 $TMUX -q select-layout -t "$SESSION" tiled
 
 
