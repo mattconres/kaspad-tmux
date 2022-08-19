@@ -56,7 +56,7 @@ $TMUX set-option -g status-position bottom
 $TMUX set-option -g status-style fg=colour136,bg=colour235
 $TMUX set-option -g status-left-length 20
 $TMUX set-option -g status-left-style default
-$TMUX set-option -g status-left "#[fg=green]#H #[fg=black]• #[fg=green,bright]#(uname -r)#[default]"
+$TMUX set-option -g status-left "#[fg=green]#H #[fg=black]• #[fg=green,bright]#(uname -r)#[default] test"
 $TMUX set-option -g status-right-length 140
 $TMUX set-option -g status-right-style default
 $TMUX set-option -g status-right "#[fg=green,bg=default,bright]#(tmux-mem-cpu-load) "
