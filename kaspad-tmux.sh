@@ -16,10 +16,10 @@ KBIN="#HOME/go/bin"
 echo "Attempting to start Session"
 $TMUX -q new-session -d -s "$SESSION"
 
-if [ $? -eq 1 ]
-then
-	$TMUX -q attach -t "$SESSION" >/dev/null 2>&1
-fi
+# if [ $? -eq 1 ]
+# then
+# 	$TMUX -q attach -t "$SESSION" >/dev/null 2>&1
+# fi
 
 
 $TMUX -q split-window -t "$SESSION" "printf '\033]2;%s\033\\' 'WalletBalance' ; kaspawallet balance"
