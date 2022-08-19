@@ -42,7 +42,7 @@ $TMUX set -g status-interval 1
 
 # status left
 # are we controlling tmux or the content of the panes?
-$TMUX set -g status-left '#[bg=#f8f8f2]#[fg=#282a36]#{?client_prefix,#[bg=#ff79c6],} ☺ '
+$TMUX set -g status-left '#[bg=#f8f8f2]#[fg=#282a36]#{?client_prefix,#[bg=#ff79c6],} ☺ "Use Ctrl-a d to disconnect"'
 
 # are we zoomed into a pane?
 $TMUX set -ga status-left '#[bg=#44475a]#[fg=#ff79c6] #{?window_zoomed_flag, ↕  ,   }'
