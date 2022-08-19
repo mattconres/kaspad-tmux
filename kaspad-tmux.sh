@@ -30,7 +30,8 @@ if [ $? -eq 1 ]
 
 $TMUX set-option -t "$SESSION" -q mouse on
 #$TMUX set-option -t "$SESSION" -w pane-border-status top
-
+$TMUX set-option -g prefix C-a
+$TMUX bind-key C-a send-prefix
 $TMUX set-option -t "$SESSION" -g pane-border-format " [ ###P #T ] "
 
 
