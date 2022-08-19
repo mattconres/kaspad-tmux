@@ -19,4 +19,4 @@ then
 	$TMUX -q attach -t "$SESSION" >/dev/null 2>&1
 fi
 
-
+$TMUX -q attach -t "$SESSION" >/dev/null 2>&1
