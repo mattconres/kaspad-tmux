@@ -26,6 +26,10 @@ $TMUX -q split-window -t "$SESSION" "printf '\033]2;%s\033\\' 'WalletBalance' ; 
 $TMUX -q select-layout -t "$SESSION" tiled
 
 
+$TMUX -q kill-pane -t "${SESSION}.0"
+$TMUX -q select-pane -t "${SESSION}.0"
+$TMUX -q select-layout -t "$SESSION" "$LAYOUT"
+
 
 $TMUX set-option -t "$SESSION" -g status-style bg=colour235,fg=yellow,dim
 $TMUX set-window-option -t "$SESSION" -g window-status-style fg=brightblue,bg=colour236,dim
