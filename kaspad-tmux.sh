@@ -22,7 +22,9 @@ $TMUX -q new-session -d -s "$SESSION"
 # fi
 
 $TMUX new-window -t $SESSION
-$TMUX send-keys -t $TMUX_SESSION_NAME:1.0 "while true; do ~/go/bin/kaspawallet balance;sleep 3; done" Enter
+$TMUX splitw -v -p 10 -t $SESSION:0.0
+$TMUX splitw -h -p 80 -t $SESSION:0.1
+$TMUX send-keys -t $SESSION:1.0 "while true; do ~/go/bin/kaspawallet balance;sleep 3; done" Enter
 
 #$TMUX -q split-window -t "$SESSION" "while true; do ~/go/bin/kaspawallet balance;sleep 3; done"
 #$TMUX set-option -t "${SESSION}.0" pane-border-format "'WalletBalance1'"
