@@ -29,7 +29,7 @@ if [ $? -eq 1 ]
  fi
 
 $TMUX set-option -t "$SESSION" -q mouse on
-$TMUX set-option -t "$SESSION" -g pane-border-status top
+$TMUX set-option -t "$SESSION" -w pane-border-status top
 #$TMUX set-option -t "$SESSION" -g pane-border-format " [ ###P #T ] "
 
 
