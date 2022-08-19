@@ -35,10 +35,10 @@ $TMUX bind-key C-a send-prefix
 $TMUX set-option -t "$SESSION" -g pane-border-format " [ ###P #T ] "
 
 # message text
-$TMUX set -g message-style bg='#44475a',fg='#8be9fd'
+#$TMUX set -g message-style bg='#44475a',fg='#8be9fd'
 
-$TMUX set -g status-style bg='#44475a',fg='#bd93f9'
-$TMUX set -g status-interval 1
+#$TMUX set -g status-style bg='#44475a',fg='#bd93f9'
+#$TMUX set -g status-interval 1
 
 # status left
 # are we controlling tmux or the content of the panes?
