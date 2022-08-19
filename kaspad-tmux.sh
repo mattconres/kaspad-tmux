@@ -11,7 +11,7 @@ TMUX=$(type -p tmux) || { echo "This script requires tmux"; exit 1; }
 SESSION="KASPA-$HOSTNAME"
 NOKILL=1
 # kaspa Binary location
-KBIN="#HOME/go/bin"
+KBIN="$HOME/go/bin"
 
 
 function at_exit() {
