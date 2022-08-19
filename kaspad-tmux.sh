@@ -25,6 +25,7 @@ $TMUX -q new-session -d -s "$SESSION"
 if [ $? -eq 1 ]
  then
  	$TMUX -q attach -t "$SESSION" >/dev/null 2>&1
+ 	exit
  fi
 
 $TMUX set-option -t "$SESSION" -q mouse on
