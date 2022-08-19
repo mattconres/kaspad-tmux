@@ -42,7 +42,7 @@ $TMUX send-keys -t $SESSION:0.0 "printf '\033]2;%s\033\\' 'Kaspd'" Enter
 $TMUX send-keys -t $SESSION:0.1 "ping 8.8.8.8" Enter
 $TMUX send-keys -t $SESSION:0.2 "while true; do ~/go/bin/kaspawallet balance;sleep 3;done" Enter
 
-$TMUX set-option -t "$SESSION" -g pane-border-format " [ ###P #T ] "
+#$TMUX set-option -t "$SESSION" -g pane-border-format " [ ###P #T ] "
 
 
 # $TMUX new-window -t $SESSION
