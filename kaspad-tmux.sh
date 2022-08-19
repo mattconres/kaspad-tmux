@@ -34,26 +34,52 @@ $TMUX set-option -g prefix C-a
 $TMUX bind-key C-a send-prefix
 $TMUX set-option -t "$SESSION" -g pane-border-format " [ ###P #T ] "
 
-# panes
-$TMUX set-option -t "$SESSION" pane-border-style 'fg=colour19 bg=colour0'
-$TMUX set-option -t "$SESSION" pane-active-border-style 'bg=colour0 fg=colour9'
+# message text
+$TMUX set -g message-style bg='#44475a',fg='#8be9fd'
 
-# statusbar
-$TMUX set-option -t "$SESSION" status-position bottom
-$TMUX set-option -t "$SESSION" status-justify left
-$TMUX set-option -t "$SESSION" status-style 'bg=colour18 fg=colour137 dim'
-$TMUX set-option -t "$SESSION" status-left ''
-$TMUX set-option -t "$SESSION" status-right '#[fg=colour233,bg=colour19] %d/%m #[fg=colour233,bg=colour8] %H:%M:%S '
-$TMUX set-option -t "$SESSION" status-right-length 50
-$TMUX set-option -t "$SESSION" status-left-length 20
+$TMUX set -g status-style bg='#44475a',fg='#bd93f9'
+$TMUX set -g status-interval 1
 
-$TMUX set-option -t "$SESSION" -w window-status-current-style 'fg=colour1 bg=colour19 bold'
-$TMUX set-option -t "$SESSION" -w window-status-current-format ' #I#[fg=colour249]:#[fg=colour255]#W#[fg=colour249]#F '
+# status left
+# are we controlling tmux or the content of the panes?
+$TMUX set -g status-left '#[bg=#f8f8f2]#[fg=#282a36]#{?client_prefix,#[bg=#ff79c6],} ☺ '
 
-$TMUX set-option -t "$SESSION" -w window-status-style 'fg=colour9 bg=colour18'
-$TMUX set-option -t "$SESSION" -w window-status-format ' #I#[fg=colour237]:#[fg=colour250]#W#[fg=colour244]#F '
+# are we zoomed into a pane?
+$TMUX set -ga status-left '#[bg=#44475a]#[fg=#ff79c6] #{?window_zoomed_flag, ↕  ,   }'
 
-$TMUX set-option -t "$SESSION" -w window-status-bell-style 'fg=colour255 bg=colour1 bold'
+# window status
+$TMUX set-window-option -g window-status-style fg='#bd93f9',bg=default
+$TMUX set-window-option -g window-status-current-style fg='#ff79c6',bg='#282a36'
+
+$TMUX set -g window-status-current-format "#[fg=#44475a]#[bg=#bd93f9]#[fg=#f8f8f2]#[bg=#bd93f9] #I #W #[fg=#bd93f9]#[bg=#44475a]"
+$TMUX set -g window-status-format "#[fg=#f8f8f2]#[bg=#44475a]#I #W #[fg=#44475a] "
+
+# status right
+$TMUX set -g status-right '#[fg=#8be9fd,bg=#44475a]#[fg=#44475a,bg=#8be9fd] #(tmux-mem-cpu-load -g 5 --interval 2) '
+$TMUX set -ga status-right '#[fg=#ff79c6,bg=#8be9fd]#[fg=#44475a,bg=#ff79c6] #(uptime | cut -f 4-5 -d " " | cut -f 1 -d ",") '
+$TMUX set -ga status-right '#[fg=#bd93f9,bg=#ff79c6]#[fg=#f8f8f2,bg=#bd93f9] %a %H:%M:%S #[fg=#6272a4]%Y-%m-%d '
+
+
+# # panes
+# $TMUX set-option -t "$SESSION" pane-border-style 'fg=colour19 bg=colour0'
+# $TMUX set-option -t "$SESSION" pane-active-border-style 'bg=colour0 fg=colour9'
+#
+# # statusbar
+# $TMUX set-option -t "$SESSION" status-position bottom
+# $TMUX set-option -t "$SESSION" status-justify left
+# $TMUX set-option -t "$SESSION" status-style 'bg=colour18 fg=colour137 dim'
+# $TMUX set-option -t "$SESSION" status-left ''
+# $TMUX set-option -t "$SESSION" status-right '#[fg=colour233,bg=colour19] %d/%m #[fg=colour233,bg=colour8] %H:%M:%S '
+# $TMUX set-option -t "$SESSION" status-right-length 50
+# $TMUX set-option -t "$SESSION" status-left-length 20
+#
+# $TMUX set-option -t "$SESSION" -w window-status-current-style 'fg=colour1 bg=colour19 bold'
+# $TMUX set-option -t "$SESSION" -w window-status-current-format ' #I#[fg=colour249]:#[fg=colour255]#W#[fg=colour249]#F '
+#
+# $TMUX set-option -t "$SESSION" -w window-status-style 'fg=colour9 bg=colour18'
+# $TMUX set-option -t "$SESSION" -w window-status-format ' #I#[fg=colour237]:#[fg=colour250]#W#[fg=colour244]#F '
+#
+# $TMUX set-option -t "$SESSION" -w window-status-bell-style 'fg=colour255 bg=colour1 bold'
 
 
 
