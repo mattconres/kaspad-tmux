@@ -37,5 +37,6 @@ $TMUX set-window-option -t "$SESSION" -g window-status-current-style fg=brightre
 
 $TMUX -q set-window-option -t "$SESSION" synchronize-panes on
 $TMUX set-option -t "$SESSION" -w pane-border-status bottom
+$TMUS set status-left "#S #[fg=green,bg=black]#(tmux-mem-cpu-load --colors --interval 2)#[default]"
 
 $TMUX -q attach -t "$SESSION" >/dev/null 2>&1
