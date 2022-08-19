@@ -22,7 +22,8 @@ $TMUX -q new-session -d -s "$SESSION"
 # fi
 
 
-$TMUX -q split-window -t "$SESSION" "printf '\033]2;%s\033\\' 'WalletBalance' ; while true; do ~/go/bin/kaspawallet balance;sleep 3; done"
+$TMUX -q split-window -t "$SESSION" "while true; do ~/go/bin/kaspawallet balance;sleep 3; done"
+$TMUX set-option -t "$SESSION" pane-border-format "'WalletBalance1'"
 $TMUX -q split-window -t "$SESSION" "printf '\033]2;%s\033\\' 'WalletBalance2' ; while true; do ~/go/bin/kaspawallet balance;sleep 3; done"
 $TMUX -q select-layout -t "$SESSION" tiled
 
@@ -30,6 +31,7 @@ $TMUX -q select-layout -t "$SESSION" tiled
 #$TMUX -q kill-pane -t "${SESSION}.0"
 #$TMUX -q select-pane -t "${SESSION}.0"
 #$TMUX -q select-layout -t "$SESSION" "$LAYOUT"
+
 
 
 $TMUX set-option -t "$SESSION" -g status-style bg=colour235,fg=yellow,dim
