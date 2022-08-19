@@ -29,9 +29,9 @@ $TMUX -q new-session -d -s "$SESSION"
 
 $TMUX set-option -t "$SESSION" -q mouse on
 $TMUX rename-window -t $SESSION:0 'Main'
-$TMUX splitw -v -p 10 -t $SESSION:0.0
+$TMUX splitw -v -p 10 -t $SESSION:0.0 "while true; do ~/go/bin/kaspawallet balance;sleep 3; done"
 $TMUX splitw -h -p 80 -t $SESSION:0.1
-$TMUX send-keys -t $SESSION:0.0 "while true; do ~/go/bin/kaspawallet balance;sleep 3; done" Enter
+#$TMUX send-keys -t $SESSION:0.0 "while true; do ~/go/bin/kaspawallet balance;sleep 3; done" Enter
 $TMUX send-keys -t $SESSION:0.1 "ping 8.8.8.8" Enter
 
 # $TMUX new-window -t $SESSION
