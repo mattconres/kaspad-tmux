@@ -59,8 +59,8 @@ $TMUX set-option -t "$SESSION" status-left-style default
 $TMUX set-option -t "$SESSION" status-left "#[fg=green]#H #[fg=black]• #[fg=green,bright]#(uname -r)#[default]"
 $TMUX set-option -t "$SESSION" status-right-length 140
 $TMUX set-option -t "$SESSION" status-right-style default
-$TMUX set-option -t "$SESSION" status-right "#[fg=green,bg=default,bright]#(tmux-mem-cpu-load) "
-$TMUX set-option -t "$SESSION" -a status-right "#[fg=blue,dim,bg=default]#(uptime | cut -f 4-5 -d ' ' | cut -f 1 -d ',') "
+$TMUX set-option -t "$SESSION" status-right "#[fg=blue,bg=default,bright]#(tmux-mem-cpu-load) "
+$TMUX set-option -t "$SESSION" -a status-right "#[fg=red,dim,bg=default]#(uptime | cut -f 4-5 -d ' ' | cut -f 1 -d ',') "
 $TMUX set-option -t "$SESSION" -a status-right " #[fg=white,bg=default]%a%l:%M:%S %p#[default] #[fg=blue]%Y-%m-%d"
 $TMUX set-window-option -t "$SESSION" window-status-style fg=colour244
 $TMUX set-window-option -t "$SESSION" window-status-style bg=default
