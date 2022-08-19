@@ -45,13 +45,13 @@ $TMUX set-option -t "$SESSION" -g pane-border-format " [ ###P #T ] "
 $TMUX set-option -t "$SESSION" status-left '#[bg=#f8f8f2]#[fg=#282a36]#{?client_prefix,#[bg=#ff79c6],} ☺ "Use Ctrl-a d to disconnect"'
 
 # are we zoomed into a pane?
-$TMUX set -ga status-left '#[bg=#44475a]#[fg=#ff79c6] #{?window_zoomed_flag, ↕  ,   }'
+#$TMUX set -ga status-left '#[bg=#44475a]#[fg=#ff79c6] #{?window_zoomed_flag, ↕  ,   }'
 
 # window status
-$TMUX set-window-option -g window-status-style fg='#bd93f9',bg=default
-$TMUX set-window-option -g window-status-current-style fg='#ff79c6',bg='#282a36'
+#$TMUX set-window-option -g window-status-style fg='#bd93f9',bg=default
+#$TMUX set-window-option -g window-status-current-style fg='#ff79c6',bg='#282a36'
 
-$TMUX set -g window-status-current-format "#[fg=#44475a]#[bg=#bd93f9]#[fg=#f8f8f2]#[bg=#bd93f9] #I #W #[fg=#bd93f9]#[bg=#44475a]"
+$#TMUX set -g window-status-current-format "#[fg=#44475a]#[bg=#bd93f9]#[fg=#f8f8f2]#[bg=#bd93f9] #I #W #[fg=#bd93f9]#[bg=#44475a]"
 #$TMUX set -g window-status-format "#[fg=#f8f8f2]#[bg=#44475a]#I #W #[fg=#44475a] "
 
 # status right
