@@ -29,6 +29,10 @@ if [ $? -eq 1 ]
  fi
 
 $TMUX set-option -t "$SESSION" -q mouse on
+$TMUX set-option -t "$SESSION" -w pane-border-status top
+$TMUX set-option -t "$SESSION" -w pane-border-format " [ ###P #T ] "
+
+
 $TMUX rename-window -t $SESSION:0 'Main'
 $TMUX splitw -v -p 10 -t $SESSION:0.0
 $TMUX splitw -h -p 80 -t $SESSION:0.1
