@@ -35,25 +35,25 @@ $TMUX bind-key C-a send-prefix
 $TMUX set-option -t "$SESSION" -g pane-border-format " [ ###P #T ] "
 
 # panes
-$TMUX set -g pane-border-style 'fg=colour19 bg=colour0'
-$TMUX set -g pane-active-border-style 'bg=colour0 fg=colour9'
+$TMUX set-option -t "$SESSION" pane-border-style 'fg=colour19 bg=colour0'
+$TMUX set-option -t "$SESSION" pane-active-border-style 'bg=colour0 fg=colour9'
 
 # statusbar
-$TMUX set -g status-position bottom
-$TMUX set -g status-justify left
-$TMUX set -g status-style 'bg=colour18 fg=colour137 dim'
-$TMUX set -g status-left ''
-$TMUX set -g status-right '#[fg=colour233,bg=colour19] %d/%m #[fg=colour233,bg=colour8] %H:%M:%S '
-$TMUX set -g status-right-length 50
-$TMUX set -g status-left-length 20
+$TMUX set-option -t "$SESSION" status-position bottom
+$TMUX set-option -t "$SESSION" status-justify left
+$TMUX set-option -t "$SESSION" status-style 'bg=colour18 fg=colour137 dim'
+$TMUX set-option -t "$SESSION" status-left ''
+$TMUX set-option -t "$SESSION" status-right '#[fg=colour233,bg=colour19] %d/%m #[fg=colour233,bg=colour8] %H:%M:%S '
+$TMUX set-option -t "$SESSION" status-right-length 50
+$TMUX set-option -t "$SESSION" status-left-length 20
 
-$TMUX setw -g window-status-current-style 'fg=colour1 bg=colour19 bold'
-$TMUX setw -g window-status-current-format ' #I#[fg=colour249]:#[fg=colour255]#W#[fg=colour249]#F '
+$TMUX set-option -t "$SESSION" -w window-status-current-style 'fg=colour1 bg=colour19 bold'
+$TMUX set-option -t "$SESSION" -w window-status-current-format ' #I#[fg=colour249]:#[fg=colour255]#W#[fg=colour249]#F '
 
-$TMUX setw -g window-status-style 'fg=colour9 bg=colour18'
-$TMUX setw -g window-status-format ' #I#[fg=colour237]:#[fg=colour250]#W#[fg=colour244]#F '
+$TMUX set-option -t "$SESSION" -w window-status-style 'fg=colour9 bg=colour18'
+$TMUX set-option -t "$SESSION" -w window-status-format ' #I#[fg=colour237]:#[fg=colour250]#W#[fg=colour244]#F '
 
-$TMUX setw -g window-status-bell-style 'fg=colour255 bg=colour1 bold'
+$TMUX set-option -t "$SESSION" -w window-status-bell-style 'fg=colour255 bg=colour1 bold'
 
 
 
