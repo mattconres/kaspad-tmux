@@ -22,10 +22,10 @@ function at_exit() {
 echo "Attempting to start Session"
 $TMUX -q new-session -d -s "$SESSION"
 
-# if [ $? -eq 1 ]
-# then
-# 	$TMUX -q attach -t "$SESSION" >/dev/null 2>&1
-# fi
+if [ $? -eq 1 ]
+ then
+ 	$TMUX -q attach -t "$SESSION" >/dev/null 2>&1
+ fi
 
 $TMUX set-option -t "$SESSION" -q mouse on
 $TMUX rename-window -t $SESSION:0 'Main'
