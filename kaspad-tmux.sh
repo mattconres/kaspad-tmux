@@ -20,4 +20,3 @@ then
 fi
 
 
-test
