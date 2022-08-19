@@ -48,24 +48,24 @@ $TMUX set-option -t "$SESSION" -g pane-border-format " [ ###P #T ] "
 #$TMUX set-option -t "$SESSION" status-left '#[bg=#f8f8f2]#[fg=#282a36]#{?client_prefix,#[bg=#ff79c6],} ☺ Use Ctrl-a d to disconnect'
 
 
-$TMUX set-option -g status on
-$TMUX set-option -g status-interval 1
-$TMUX set-option -g status-justify centre
-$TMUX set-option -g status-keys vi
-$TMUX set-option -g status-position bottom
-$TMUX set-option -g status-style fg=colour136,bg=colour235
-$TMUX set-option -g status-left-length 20
-$TMUX set-option -g status-left-style default
-$TMUX set-option -g status-left "#[fg=green]#H #[fg=black]• #[fg=green,bright]#(uname -r) test #[default]"
-$TMUX set-option -g status-right-length 140
-$TMUX set-option -g status-right-style default
-$TMUX set-option -g status-right "#[fg=green,bg=default,bright]#(tmux-mem-cpu-load) "
-$TMUX set-option -ag status-right "#[fg=red,dim,bg=default]#(uptime | cut -f 4-5 -d ' ' | cut -f 1 -d ',') "
-$TMUX set-option -ag status-right " #[fg=white,bg=default]%a%l:%M:%S %p#[default] #[fg=blue]%Y-%m-%d"
-$TMUX set-window-option -g window-status-style fg=colour244
-$TMUX set-window-option -g window-status-style bg=default
-$TMUX set-window-option -g window-status-current-style fg=colour166
-$TMUX set-window-option -g window-status-current-style bg=default
+$TMUX set-option -t "$SESSION" -g status on
+$TMUX set-option -t "$SESSION" -g status-interval 1
+$TMUX set-option -t "$SESSION" -g status-justify centre
+$TMUX set-option -t "$SESSION" -g status-keys vi
+$TMUX set-option -t "$SESSION" -g status-position bottom
+$TMUX set-option -t "$SESSION" -g status-style fg=colour136,bg=colour235
+$TMUX set-option -t "$SESSION" -g status-left-length 20
+$TMUX set-option -t "$SESSION" -g status-left-style default
+$TMUX set-option -t "$SESSION" -g status-left "#[fg=green]#H #[fg=black]• #[fg=green,bright]#(uname -r) test #[default]"
+$TMUX set-option -t "$SESSION" -g status-right-length 140
+$TMUX set-option -t "$SESSION" -g status-right-style default
+$TMUX set-option -t "$SESSION" -g status-right "#[fg=green,bg=default,bright]#(tmux-mem-cpu-load) "
+$TMUX set-option -t "$SESSION" -ag status-right "#[fg=red,dim,bg=default]#(uptime | cut -f 4-5 -d ' ' | cut -f 1 -d ',') "
+$TMUX set-option -t "$SESSION" -ag status-right " #[fg=white,bg=default]%a%l:%M:%S %p#[default] #[fg=blue]%Y-%m-%d"
+$TMUX set-window-option -t "$SESSION" -g window-status-style fg=colour244
+$TMUX set-window-option -t "$SESSION" -g window-status-style bg=default
+$TMUX set-window-option -t "$SESSION" -g window-status-current-style fg=colour166
+$TMUX set-window-option -t "$SESSION" -g window-status-current-style bg=default
 
 
 
