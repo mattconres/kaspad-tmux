@@ -53,7 +53,7 @@ $TMUX set-option -t "$SESSION" status-interval 1
 $TMUX set-option -t "$SESSION" status-justify centre
 $TMUX set-option -t "$SESSION" status-keys vi
 $TMUX set-option -t "$SESSION" status-position bottom
-$TMUX set-option -t "$SESSION" status-style fg=blue,bg=colour235
+$TMUX set-option -t "$SESSION" status-style fg=white,bg=colour235
 $TMUX set-option -t "$SESSION" status-left-length 20
 $TMUX set-option -t "$SESSION" status-left-style default
 $TMUX set-option -t "$SESSION" status-left "#[fg=green]#H #[fg=black]• #[fg=green,bright]#(uname -r)#[default]"
