@@ -63,7 +63,7 @@ $TMUX send-keys -t $SESSION:0.0 "$KBIN/kaspad --utxoindex" Enter
 $TMUX select-pane -t $SESSION:0.0 -T "Kaspd Daemon"
 $TMUX send-keys -t $SESSION:0.1 "$KBIN/kaspawallet start-daemon" Enter
 $TMUX select-pane -t $SESSION:0.1 -T "Kaspa Wallet Daemon"
-$TMUX send-keys -t $SESSION:0.2 "while true; do ~/go/bin/kaspawallet balance;sleep 3;done" Enter
+$TMUX send-keys -t $SESSION:0.2 "while true; do ~/go/bin/kaspawallet balance;sleep 30;done" Enter
 $TMUX select-pane -t $SESSION:0.2 -T "Kaspa Wallet Balance Loop"
 
 #$TMUX set-option -t "$SESSION" -g status-style bg=colour235,fg=yellow,dim
